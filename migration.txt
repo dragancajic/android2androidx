@@ -1,0 +1,105 @@
+10:04 PM October 10, 2021
+
+
+~ Migrating to AndroidX | Android Developers
+https://developer.android.com/jetpack/androidx/migrate
+
+§ Migrate an existing project using Android Studio
+
+~ gradle.properties
+-~-~-~-~-~-~-~-~-~-
+# ...
+# AndroidX package structure to make it clearer which packages are bundled with the
+# Android operating system, and which are packaged with your app's APK
+# https://developer.android.com/topic/libraries/support-library/androidx-rn
+android.useAndroidX=true
+# The Android plugin uses the appropriate AndroidX library instead of a Support Library:
+android.enableJetifier=true
+# ...
+
+
+» Migration using Android Studio
+Android Studio -> Refactor -> Migrate to AndroidX
+
+√  L I M I T E D  F U N C T I O N A L I T Y  √
+
+
+So, try to manually migrate libraries, from Support Library to AndroidX:
+
+» Manual Migration
+
+~ Class Mappings | Android Developers
+https://developer.android.com/jetpack/androidx/migrate/class-mappings
+
+§ android.support.constraint
+
+|------------------------------------------------|----------------------------------------------------|
+|  Support Library class                         |  AndroidX class                                    |
+|------------------------------------------------|----------------------------------------------------|
+|  android.support.constraint.ConstraintLayout   |  androidx.constraintlayout.widget.ConstraintLayout |
+|------------------------------------------------|----------------------------------------------------|
+
+
+§ android.support.design
+
+|-------------------------|-------------------------------------------------------------------------|
+|  Support Library class  |  android.support.design.widget.FloatingActionButton                     |
+|  AndroidX class         |  com.google.android.material.floatingactionbutton.FloatingActionButton  |
+|-------------------------|-------------------------------------------------------------------------|
+|  Support Library class  |  android.support.design.widget.FloatingActionButton                     |
+|  AndroidX class         |  com.google.android.material.floatingactionbutton.FloatingActionButton  |
+|-------------------------|-------------------------------------------------------------------------|
+|  Support Library class  |  android.support.design.widget.Snackbar                                 |
+|  AndroidX class         |  com.google.android.material.snackbar.Snackbar                          |
+|-------------------------|-------------------------------------------------------------------------|
+|  Support Library class  |  android.support.design.widget.CollapsingToolbarLayout                  |
+|  AndroidX class         |  com.google.android.material.appbar.CollapsingToolbarLayout             |
+|-------------------------|-------------------------------------------------------------------------|
+|  Support Library class  |  android.support.design.widget.CoordinatorLayout                        |
+|  AndroidX class         |  androidx.coordinatorlayout.widget.CoordinatorLayout                    |
+|-------------------------|-------------------------------------------------------------------------|
+|  Support Library class  |  android.support.design.widget.AppBarLayout                             |
+|  AndroidX class         |  com.google.android.material.appbar.AppBarLayout                        |
+|-------------------------|-------------------------------------------------------------------------|
+|  Support Library class  |  android.support.design.widget.CollapsingToolbarLayout                  |
+|  AndroidX class         |  com.google.android.material.appbar.CollapsingToolbarLayout             |
+|-------------------------|-------------------------------------------------------------------------|
+
+
+§ android.support.v4
+
+|------------------------------------------------|---------------------------------------------|
+|  Support Library class                         |  AndroidX class                             |
+|------------------------------------------------|---------------------------------------------|
+|  android.support.v4.app.Fragment               |  androidx.fragment.app.Fragment             |
+|------------------------------------------------|---------------------------------------------|
+
+
+§ android.support.v7
+
+|--------------------------------------------------|-----------------------------------------------------|
+|  Support Library class                           |  AndroidX class                                     |
+|--------------------------------------------------|-----------------------------------------------------|
+|  android.support.v7.app.AppCompatActivity        |  androidx.appcompat.app.AppCompatActivity           |
+|  android.support.v7.widget.RecyclerView          |  androidx.recyclerview.widget.RecyclerView          |
+|  android.support.v7.widget.Toolbar               |  androidx.appcompat.widget.Toolbar                  |
+|  android.support.v7.widget.CardView              |  androidx.cardview.widget.CardView                  |
+|  android.support.v7.widget.DividerItemDecoration |  androidx.recyclerview.widget.DividerItemDecoration |
+|  android.support.v7.widget.LinearLayoutManager   |  androidx.recyclerview.widget.LinearLayoutManager   |
+|--------------------------------------------------|-----------------------------------------------------|
+
+
+~ Artifact Mappings | Android Developers
+https://developer.android.com/jetpack/androidx/migrate/artifact-mappings
+
+
+~ Migrating to AndroidX: The time is right (Android Dev Summit '19) - YouTube
+https://www.youtube.com/watch?v=Hyt7LR5mXLc
+
+> Denis - пре 1 године (измењено)
+https://www.youtube.com/channel/UCnWQD6k7OFaf3o7JTm0VX4g
+
+You should have added a link to a script: https://goo.gle/androidx-migration-script
+Docs: https://d.android.com/jetpack/androidx
+Article: https://goo.gle/plaid-androidx-migration
+Bugtracker: https://goo.gle/androidx-migration-bugs
